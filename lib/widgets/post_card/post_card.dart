@@ -59,7 +59,7 @@ class PostCard extends StatelessWidget {
         children: <Widget>[
           _buildTitleRow(context),
           _buildBody(context),
-          _styledText(context, user, maxLines: 1, fontSize: 12),
+          Align(alignment: Alignment.centerRight, child: _styledText(context, user, maxLines: 1, fontSize: 12)),
         ],
       ),
     );
@@ -85,29 +85,24 @@ class PostCard extends StatelessWidget {
   List<Widget> _buildCommentCards() {
     return comments != null && comments!.isNotEmpty
         ? comments!
-        .map((CommentsModel e) => Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 44),
-      child: CommentCard(
-        user: e.email,
-        body: e.body,
-        title: e.name,
-      ),
-    ))
-        .toList()
+            .map((CommentsModel e) => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 44), child: CommentCard(user: e.email, body: e.body, title: e.name)))
+            .toList()
         : <Widget>[];
   }
 
-  Widget _styledText(BuildContext context, String text, {double fontSize = 14, int maxLines = 1, FontWeight fontWeight = FontWeight.normal}) {
+  Widget _styledText(BuildContext context, String text,
+      {double fontSize = 14, int maxLines = 1, FontWeight fontWeight = FontWeight.normal}) {
     return Text(
       text,
       overflow: TextOverflow.ellipsis,
       maxLines: maxLines,
       style: Theme.of(context).textTheme.displayLarge!.copyWith(
-        fontFamily: FontConstants.POPPINS_FONT,
-        fontWeight: fontWeight,
-        fontSize: fontSize,
-        color: ColorHelper.white.color.withOpacity(0.7),
-      ),
+            fontFamily: FontConstants.POPPINS_FONT,
+            fontWeight: fontWeight,
+            fontSize: fontSize,
+            color: ColorHelper.white.color.withOpacity(0.7),
+          ),
     );
   }
 }

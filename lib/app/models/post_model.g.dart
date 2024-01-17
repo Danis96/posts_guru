@@ -14,12 +14,14 @@ Post _$PostFromJson(Map<String, dynamic> json) => Post(
       comments: (json['comments'] as List<dynamic>?)
           ?.map(CommentsModel.fromJson)
           .toList(),
+      user: json['user'] as String? ?? '',
     );
 
 Map<String, dynamic> _$PostToJson(Post instance) => <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
       'body': instance.body,
+      'user': instance.user,
       'userId': instance.userID,
       'comments': instance.comments,
     };

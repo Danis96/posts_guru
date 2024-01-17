@@ -5,7 +5,7 @@ part 'post_model.g.dart';
 
 @JsonSerializable()
 class Post {
-  Post({this.id = 0, this.body = '', this.title = '', this.userID = 0, this.comments});
+  Post({this.id = 0, this.body = '', this.title = '', this.userID = 0, this.comments, this.user = ''});
 
   factory Post.fromJson(dynamic json) => _$PostFromJson(json as Map<String, dynamic>);
 
@@ -17,6 +17,8 @@ class Post {
   final String title;
   @JsonKey(name: 'body', defaultValue: '')
   final String body;
+  @JsonKey(defaultValue: '')
+  String? user;
   @JsonKey(name: 'userId', defaultValue: 0)
   final int userID;
   List<CommentsModel>? comments;

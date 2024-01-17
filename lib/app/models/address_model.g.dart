@@ -8,8 +8,7 @@ part of 'address_model.dart';
 
 Address _$AddressFromJson(Map<String, dynamic> json) => Address(
       city: json['city'] as String? ?? '',
-      geoModel:
-          json['geoModel'] == null ? null : GeoModel.fromJson(json['geoModel']),
+      geoModel: json['geo'] == null ? null : GeoModel.fromJson(json['geo']),
       street: json['street'] as String? ?? '',
       suite: json['suite'] as String? ?? '',
       zipcode: json['zipcode'] as String? ?? '',
@@ -20,5 +19,5 @@ Map<String, dynamic> _$AddressToJson(Address instance) => <String, dynamic>{
       'suite': instance.suite,
       'city': instance.city,
       'zipcode': instance.zipcode,
-      'geoModel': instance.geoModel,
+      'geo': instance.geoModel,
     };

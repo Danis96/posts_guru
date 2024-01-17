@@ -31,6 +31,7 @@ class _HomepageState extends State<Homepage> {
   }
 
   Future<void> _getInitialData() async {
+    await context.read<PostsProvider>().fetchUsers();
     await context.read<PostsProvider>().fetchPosts();
   }
 
@@ -102,7 +103,7 @@ class _HomepageState extends State<Homepage> {
           commentOpened: false,
           title: _p.title,
           comments: _p.comments ?? <CommentsModel>[],
-          user: 'User',
+          user: _p.user ?? '',
         );
       },
     );

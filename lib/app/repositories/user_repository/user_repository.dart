@@ -6,7 +6,7 @@ import '../../../network_module/http_client.dart';
 class UserRepository {
   Future<List<User>> getUsers() async {
     List<User> _users;
-    final dynamic response = await HTTPClient.instance.fetchData(ApiPathHelper.getValue(ApiPath.posts));
+    final dynamic response = await HTTPClient.instance.fetchData(ApiPathHelper.getValue(ApiPath.users));
     final List<dynamic> responseJson = response as List<dynamic>;
     _users = responseJson.map((dynamic value) => User.fromJson(value)).toList();
     return _users;

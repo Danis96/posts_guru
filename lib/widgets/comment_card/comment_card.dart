@@ -42,7 +42,7 @@ class CommentCard extends StatelessWidget {
         children: <Widget>[
           _buildTitleRow(context),
           _buildBody(context),
-          _buildUser(context),
+          Align(alignment: Alignment.centerRight, child: _buildUser(context)),
         ],
       ),
     );

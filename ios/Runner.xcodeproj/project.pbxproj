@@ -445,7 +445,6 @@
 				7EF5BD7D24FFCC86000298D6 /* Embed Frameworks */,
 				7EF5BD7E24FFCC86000298D6 /* Thin Binary */,
 				F1612CAE00130B13B4307D59 /* [CP] Embed Pods Frameworks */,
-				D7573DA2CA62AF9052E7F3A6 /* [CP] Copy Pods Resources */,
 				7EF5E279255EC20E00F1C37D /* Embed App Extensions */,
 				283C026825654FE00062C5F6 /* Firebase Config */,
 			);
@@ -471,7 +470,6 @@
 				7EF5BD9024FFCC9C000298D6 /* Embed Frameworks */,
 				7EF5BD9124FFCC9C000298D6 /* Thin Binary */,
 				7EACDCB2BD4236D6A58310F7 /* [CP] Embed Pods Frameworks */,
-				E9EAE88BD69D48454D0BE8DD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -530,7 +528,6 @@
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				01AA7CE7B0A909004B01120E /* [CP] Embed Pods Frameworks */,
-				155C4B46C19AD55E7E167D12 /* [CP] Copy Pods Resources */,
 				7EF5E263255EBC9500F1C37D /* Embed App Extensions */,
 				9740EEB61CF901F6004384FC /* Firebase Config */,
 			);
@@ -654,23 +651,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-prod/Pods-prod-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		155C4B46C19AD55E7E167D12 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-prod/Pods-prod-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-prod/Pods-prod-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-prod/Pods-prod-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		283C026825654FE00062C5F6 /* Firebase Config */ = {
@@ -876,40 +856,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Name of the resource we're selectively copying\n\nGOOGLESERVICE_INFO_PLIST=GoogleService-Info.plist\n\n\n\n# Get references to dev and prod versions of the GoogleService-Info.plist\n\n# NOTE: These should only live on the file system and should NOT be part of the target (since we'll be adding them to the target manually)\n\nGOOGLESERVICE_INFO_DEV=${PROJECT_DIR}/firebaseConfig/prod/${GOOGLESERVICE_INFO_PLIST}\n\n\n# Make sure the dev version of GoogleService-Info.plist exists\n\necho \"Looking for ${GOOGLESERVICE_INFO_PLIST} in ${GOOGLESERVICE_INFO_DEV}\"\n\nif [ ! -f $GOOGLESERVICE_INFO_DEV ]\n\nthen\n\n    echo \"No Production GoogleService-Info.plist found. Please ensure it's in the proper directory.\"\n\n    exit 1\n\nfi\n\n\n\n# Get a reference to the destination location for the GoogleService-Info.plist\n\nPLIST_DESTINATION=${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app\n\necho \"Will copy ${GOOGLESERVICE_INFO_PLIST} to final destination: ${PLIST_DESTINATION}\"\n\necho \"Using ${GOOGLESERVICE_INFO_DEV}\"\n\ncp \"${GOOGLESERVICE_INFO_DEV}\" \"${PLIST_DESTINATION}\"\n";
-		};
-		D7573DA2CA62AF9052E7F3A6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dev/Pods-dev-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-dev/Pods-dev-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-dev/Pods-dev-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E9EAE88BD69D48454D0BE8DD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-qa/Pods-qa-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-qa/Pods-qa-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-qa/Pods-qa-resources.sh\"\n";
-			showEnvVarsInLog = 0;
 		};
 		F035F29606A44EDF8A382FBA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
