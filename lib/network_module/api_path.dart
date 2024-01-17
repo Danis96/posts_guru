@@ -5,6 +5,7 @@
 enum ApiPath {
   posts,
   posts_comments,
+  users,
 }
 
 mixin ApiPathHelper {
@@ -14,6 +15,8 @@ mixin ApiPathHelper {
         return '/posts';
       case ApiPath.posts_comments:
         return '/posts/$concatValue/comments';
+        case ApiPath.users:
+        return '/users';
       default:
         return '';
     }
