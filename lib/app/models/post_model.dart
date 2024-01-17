@@ -1,11 +1,12 @@
 import 'package:js_guru/app/models/comments_model.dart';
+import 'package:js_guru/app/models/user_model.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'post_model.g.dart';
 
 @JsonSerializable()
 class Post {
-  Post({this.id = 0, this.body = '', this.title = '', this.userID = 0, this.comments, this.user = ''});
+  Post({this.id = 0, this.body = '', this.title = '', this.userID = 0, this.comments, this.user});
 
   factory Post.fromJson(dynamic json) => _$PostFromJson(json as Map<String, dynamic>);
 
@@ -17,8 +18,7 @@ class Post {
   final String title;
   @JsonKey(name: 'body', defaultValue: '')
   final String body;
-  @JsonKey(defaultValue: '')
-  String? user;
+  User? user;
   @JsonKey(name: 'userId', defaultValue: 0)
   final int userID;
   List<CommentsModel>? comments;

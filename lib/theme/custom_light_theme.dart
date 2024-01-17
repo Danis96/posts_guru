@@ -8,7 +8,7 @@ class CustomTheme {
   static ThemeData get lightTheme {
     return ThemeData(
       appBarTheme: AppBarTheme(
-        color: ColorHelper.mercury.color,
+        color: ColorHelper.black.color,
         elevation: 0,
         centerTitle: true,
         toolbarTextStyle: TextTheme(
@@ -51,7 +51,7 @@ class CustomTheme {
           color: ColorHelper.white.color,
         ),
         headlineSmall: TextStyle(
-          color: ColorHelper.foyerBlack.color,
+          color: ColorHelper.black.color,
           fontSize: 24,
           fontWeight: FontWeight.w500,
         ),
@@ -78,7 +78,7 @@ class CustomTheme {
         bodyMedium: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.w400,
-          color: ColorHelper.foyerBlack.color,
+          color: ColorHelper.black.color,
         ),
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -96,7 +96,7 @@ class CustomTheme {
               if (states.contains(MaterialState.disabled)) {
                 return BorderSide(color: ColorHelper.black.color.withOpacity(0.2), width: 2);
               }
-              return BorderSide(color: ColorHelper.towerNavy2.color);
+              return BorderSide(color: ColorHelper.white.color);
             },
           ),
           foregroundColor: MaterialStateProperty.resolveWith<Color>(
@@ -173,7 +173,7 @@ class CustomTheme {
         ),
         focusedErrorBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: ColorHelper.aigFieldError.color,
+            color: ColorHelper.white.color,
           ),
           borderRadius: const BorderRadius.all(
             Radius.circular(6.0),
@@ -181,7 +181,7 @@ class CustomTheme {
         ),
         errorBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            color: ColorHelper.aigFieldError.color,
+            color: ColorHelper.white.color,
           ),
           borderRadius: const BorderRadius.all(
             Radius.circular(6.0),

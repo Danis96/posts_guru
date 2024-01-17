@@ -14,7 +14,7 @@ Post _$PostFromJson(Map<String, dynamic> json) => Post(
       comments: (json['comments'] as List<dynamic>?)
           ?.map(CommentsModel.fromJson)
           .toList(),
-      user: json['user'] as String? ?? '',
+      user: json['user'] == null ? null : User.fromJson(json['user']),
     );
 
 Map<String, dynamic> _$PostToJson(Post instance) => <String, dynamic>{
