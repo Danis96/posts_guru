@@ -96,12 +96,7 @@ Widget _listOfComments(BuildContext context) {
     itemCount: context.watch<PostsProvider>().post.comments!.length,
     itemBuilder: (BuildContext context, int index) {
       final CommentsModel _p = context.watch<PostsProvider>().post.comments![index];
-      return CommentCard(
-        dotColor: index.getRandomColor(),
-        body: _p.body,
-        title: _p.email,
-        user: _p.email,
-      );
+      return CommentCard(dotColor: index.getRandomColor(), body: _p.body, title: _p.email, user: _p.email);
     },
   );
 }

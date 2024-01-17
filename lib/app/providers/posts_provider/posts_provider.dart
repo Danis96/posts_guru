@@ -21,31 +21,22 @@ class PostsProvider extends ChangeNotifier {
   TextEditingController searchController = TextEditingController();
 
   Post? _post;
-
   Post get post => _post ?? Post();
-
   set setPost(Post value) => _post = value;
 
   List<Post>? _posts = <Post>[];
-
   List<Post>? get posts => _posts;
-
   set setPosts(List<Post> value) => _posts = value;
 
   List<Post>? _filteredPosts = <Post>[];
-
   List<Post>? get filteredPosts => _filteredPosts;
 
   List<CommentsModel>? _comments = <CommentsModel>[];
-
   List<CommentsModel>? get comments => _comments;
-
   set setComments(List<CommentsModel> value) => _comments = value;
 
   List<User>? _users = <User>[];
-
   List<User>? get users => _users;
-
   set setUser(List<User> value) => _users = value;
 
   Future<String?> fetchPosts() async {

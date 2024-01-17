@@ -96,7 +96,7 @@ class CustomTheme {
               if (states.contains(MaterialState.disabled)) {
                 return BorderSide(color: ColorHelper.black.color.withOpacity(0.2), width: 2);
               }
-              return BorderSide(color: ColorHelper.white.color);
+              return BorderSide(color: ColorHelper.black.color);
             },
           ),
           foregroundColor: MaterialStateProperty.resolveWith<Color>(
@@ -108,11 +108,7 @@ class CustomTheme {
             },
           ),
           elevation: MaterialStateProperty.all(0),
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(4.0),
-            ),
-          ),
+          shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: BorderRadius.circular(4.0))),
           minimumSize: MaterialStateProperty.all(const Size(104, 64)),
           padding: MaterialStateProperty.all(EdgeInsets.zero),
           textStyle: MaterialStateProperty.resolveWith<TextStyle>(

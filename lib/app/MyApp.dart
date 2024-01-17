@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:js_guru/app/providers/images_provider/images_provider.dart';
 import 'package:js_guru/app/providers/posts_provider/posts_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
@@ -25,6 +26,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: <SingleChildWidget>[
         ChangeNotifierProvider<PostsProvider>(create: (_) => PostsProvider()),
+        ChangeNotifierProvider<ImagesProvider>(create: (_) => ImagesProvider()),
       ],
       child: MaterialApp.router(
         routerConfig: router,

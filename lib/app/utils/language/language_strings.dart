@@ -34,4 +34,11 @@ class Language {
   static const String author_address = 'Address';
   static const String author_subtitle =
       'An author of a blog post is a person who writes and publishes an article, news piece, or guide on a website, usually with the intention of sharing their knowledge, opinions, or experiences on a specific topic.';
+
+  // Home page
+  static const String img_headline = 'Images';
+  static const String img_subtitle = 'Here you can enter number limit for your search';
+  static const String img_empty = 'No images to show';
+  static const String img_enter_hint = 'Enter limit';
+
 }
