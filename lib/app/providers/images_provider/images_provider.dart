@@ -24,7 +24,6 @@ class ImagesProvider extends ChangeNotifier {
     _images!.clear();
     try {
       _images = await _imagesRepository!.getImages(start.toString(), limit.toString());
-      start += limit;
       notifyListeners();
       return null;
     } catch (e) {

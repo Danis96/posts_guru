@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:js_guru/app/models/image_model.dart';
 import 'package:js_guru/app/providers/images_provider/images_provider.dart';
-import 'package:js_guru/app/view/text_fields/custom_text_form_field.dart';
 import 'package:js_guru/widgets/buttons/common_button.dart';
-import 'package:js_guru/widgets/dialogs/simple_dialog.dart';
-import 'package:js_guru/widgets/loaders/loader_app_dialog.dart';
 import 'package:provider/provider.dart';
 
 import '../../../generated/assets.dart';
 import '../../../theme/color_helper.dart';
 import '../../../widgets/app_bars/common_app_bar.dart';
+import '../../../widgets/loaders/loader_app_dialog.dart';
+import '../../../widgets/text_fields/custom_text_form_field.dart';
 import '../../utils/language/language_strings.dart';
 import '../home_page/home_page_drawer.dart';
 
@@ -30,7 +29,8 @@ class _ImagePageState extends State<ImagePage> {
   }
 
   Future<void> _getInitialData() async {
-    await context.read<ImagesProvider>().fetchImages();
+    customFutureBuilderLoader(context: context);
+    await context.read<ImagesProvider>().fetchImages().then((value) => Navigator.of(context).pop());
   }
 
   @override
@@ -54,14 +54,17 @@ class _ImagePageState extends State<ImagePage> {
       );
 
   Widget _buildBody(BuildContext context) {
-    return ListView(
-      shrinkWrap: true,
-      children: <Widget>[
-        const SizedBox(height: 25),
-        _buildHeadline(context),
-        const SizedBox(height: 25),
-        if (context.watch<ImagesProvider>().imagesNotEmptyOrNull()) _listOfImages(context) else _buildEmptyState(context),
-      ],
+    return RefreshIndicator(
+      onRefresh: () => _getInitialData(),
+      child: ListView(
+        shrinkWrap: true,
+        children: <Widget>[
+          const SizedBox(height: 25),
+          _buildHeadline(context),
+          const SizedBox(height: 25),
+          if (context.watch<ImagesProvider>().imagesNotEmptyOrNull()) _listOfImages(context) else _buildEmptyState(context),
+        ],
+      ),
     );
   }
 
@@ -88,7 +91,7 @@ class _ImagePageState extends State<ImagePage> {
       onPressed: () async {
         await context.read<ImagesProvider>().updateLimit();
       },
-      buttonTitle: 'Update limit & search',
+      buttonTitle: Language.img_btn,
     );
   }
 
@@ -120,11 +123,17 @@ class _ImagePageState extends State<ImagePage> {
       itemCount: context.watch<ImagesProvider>().images!.length,
       itemBuilder: (BuildContext context, int index) {
         final ImageModel _p = context.read<ImagesProvider>().images![index];
-        return Image.network(_p.url);
+        return _buildImgContainer(context, _p.thumbnail, (index + 1).toString());
       },
     );
   }
-}
 
-// input copilot
-//write me an example where we use _limit in jsonplaceholder.typicode.com/photos in flutter and how to create pagination where limit will be give by user which he will enter in text form field
+  Widget _buildImgContainer(BuildContext context, String image, String index) {
+    return Container(
+      width: 200,
+      height: 200,
+      decoration: BoxDecoration(shape: BoxShape.rectangle, borderRadius: BorderRadius.circular(10)),
+      child: Row(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[Text(index), Image.network(image)]),
+    );
+  }
+}

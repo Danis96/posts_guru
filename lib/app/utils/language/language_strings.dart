@@ -5,7 +5,8 @@ class Language {
   static const String common_continue = 'Continue';
 
   // drawer
-  static const String dr_item_home = 'Home';
+  static const String dr_item_home = 'Posts';
+  static const String dr_item_img = 'Images';
 
   // Home page
   static const String home_headline = 'Posts';
@@ -35,10 +36,11 @@ class Language {
   static const String author_subtitle =
       'An author of a blog post is a person who writes and publishes an article, news piece, or guide on a website, usually with the intention of sharing their knowledge, opinions, or experiences on a specific topic.';
 
-  // Home page
+  // Image page
   static const String img_headline = 'Images';
-  static const String img_subtitle = 'Here you can enter number limit for your search';
+  static const String img_subtitle = 'Here you can enter number limit for your search, by default it will fetch 10';
   static const String img_empty = 'No images to show';
   static const String img_enter_hint = 'Enter limit';
+  static const String img_btn = 'Update limit & search';
 
 }

@@ -34,8 +34,9 @@ class _HomepageState extends State<Homepage> {
   }
 
   Future<void> _getInitialData() async {
+    customFutureBuilderLoader(context: context);
     await context.read<PostsProvider>().fetchUsers();
-    await context.read<PostsProvider>().fetchPosts();
+    await context.read<PostsProvider>().fetchPosts().then((value) => Navigator.of(context).pop());
   }
 
   @override
