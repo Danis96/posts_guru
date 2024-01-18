@@ -1,175 +1,28 @@
 PODS:
   - device_info_plus (0.0.1):
     - Flutter
-  - Firebase/Analytics (9.6.0):
-    - Firebase/Core
-  - Firebase/Core (9.6.0):
-    - Firebase/CoreOnly
-    - FirebaseAnalytics (~> 9.6.0)
-  - Firebase/CoreOnly (9.6.0):
-    - FirebaseCore (= 9.6.0)
-  - Firebase/Crashlytics (9.6.0):
-    - Firebase/CoreOnly
-    - FirebaseCrashlytics (~> 9.6.0)
-  - FirebaseAnalytics (9.6.0):
-    - FirebaseAnalytics/AdIdSupport (= 9.6.0)
-    - FirebaseCore (~> 9.0)
-    - FirebaseInstallations (~> 9.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
-    - GoogleUtilities/MethodSwizzler (~> 7.7)
-    - GoogleUtilities/Network (~> 7.7)
-    - "GoogleUtilities/NSData+zlib (~> 7.7)"
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-  - FirebaseAnalytics/AdIdSupport (9.6.0):
-    - FirebaseCore (~> 9.0)
-    - FirebaseInstallations (~> 9.0)
-    - GoogleAppMeasurement (= 9.6.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
-    - GoogleUtilities/MethodSwizzler (~> 7.7)
-    - GoogleUtilities/Network (~> 7.7)
-    - "GoogleUtilities/NSData+zlib (~> 7.7)"
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-  - FirebaseCore (9.6.0):
-    - FirebaseCoreDiagnostics (~> 9.0)
-    - FirebaseCoreInternal (~> 9.0)
-    - GoogleUtilities/Environment (~> 7.7)
-    - GoogleUtilities/Logger (~> 7.7)
-  - FirebaseCoreDiagnostics (9.6.0):
-    - GoogleDataTransport (< 10.0.0, >= 9.1.4)
-    - GoogleUtilities/Environment (~> 7.7)
-    - GoogleUtilities/Logger (~> 7.7)
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-  - FirebaseCoreInternal (9.6.0):
-    - "GoogleUtilities/NSData+zlib (~> 7.7)"
-  - FirebaseCrashlytics (9.6.0):
-    - FirebaseCore (~> 9.0)
-    - FirebaseInstallations (~> 9.0)
-    - GoogleDataTransport (< 10.0.0, >= 9.1.4)
-    - GoogleUtilities/Environment (~> 7.7)
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-    - PromisesObjC (~> 2.1)
-  - FirebaseInstallations (9.6.0):
-    - FirebaseCore (~> 9.0)
-    - GoogleUtilities/Environment (~> 7.7)
-    - GoogleUtilities/UserDefaults (~> 7.7)
-    - PromisesObjC (~> 2.1)
   - Flutter (1.0.0)
-  - flutter_native_splash (0.0.1):
-    - Flutter
-  - GoogleAppMeasurement (9.6.0):
-    - GoogleAppMeasurement/AdIdSupport (= 9.6.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
-    - GoogleUtilities/MethodSwizzler (~> 7.7)
-    - GoogleUtilities/Network (~> 7.7)
-    - "GoogleUtilities/NSData+zlib (~> 7.7)"
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-  - GoogleAppMeasurement/AdIdSupport (9.6.0):
-    - GoogleAppMeasurement/WithoutAdIdSupport (= 9.6.0)
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
-    - GoogleUtilities/MethodSwizzler (~> 7.7)
-    - GoogleUtilities/Network (~> 7.7)
-    - "GoogleUtilities/NSData+zlib (~> 7.7)"
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-  - GoogleAppMeasurement/WithoutAdIdSupport (9.6.0):
-    - GoogleUtilities/AppDelegateSwizzler (~> 7.7)
-    - GoogleUtilities/MethodSwizzler (~> 7.7)
-    - GoogleUtilities/Network (~> 7.7)
-    - "GoogleUtilities/NSData+zlib (~> 7.7)"
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-  - GoogleDataTransport (9.2.5):
-    - GoogleUtilities/Environment (~> 7.7)
-    - nanopb (< 2.30910.0, >= 2.30908.0)
-    - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/AppDelegateSwizzler (7.11.5):
-    - GoogleUtilities/Environment
-    - GoogleUtilities/Logger
-    - GoogleUtilities/Network
-  - GoogleUtilities/Environment (7.11.5):
-    - PromisesObjC (< 3.0, >= 1.2)
-  - GoogleUtilities/Logger (7.11.5):
-    - GoogleUtilities/Environment
-  - GoogleUtilities/MethodSwizzler (7.11.5):
-    - GoogleUtilities/Logger
-  - GoogleUtilities/Network (7.11.5):
-    - GoogleUtilities/Logger
-    - "GoogleUtilities/NSData+zlib"
-    - GoogleUtilities/Reachability
-  - "GoogleUtilities/NSData+zlib (7.11.5)"
-  - GoogleUtilities/Reachability (7.11.5):
-    - GoogleUtilities/Logger
-  - GoogleUtilities/UserDefaults (7.11.5):
-    - GoogleUtilities/Logger
-  - nanopb (2.30909.0):
-    - nanopb/decode (= 2.30909.0)
-    - nanopb/encode (= 2.30909.0)
-  - nanopb/decode (2.30909.0)
-  - nanopb/encode (2.30909.0)
-  - OneSignalXCFramework (3.10.0)
   - package_info_plus (0.4.5):
     - Flutter
-  - path_provider_foundation (0.0.1):
-    - Flutter
-    - FlutterMacOS
-  - PromisesObjC (2.3.1)
 
 DEPENDENCIES:
   - device_info_plus (from `.symlinks/plugins/device_info_plus/ios`)
-  - Firebase/Analytics
-  - Firebase/Crashlytics
   - Flutter (from `Flutter`)
-  - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
-  - OneSignalXCFramework (< 4.0, >= 3.4.3)
   - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
-  - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
-
-SPEC REPOS:
-  trunk:
-    - Firebase
-    - FirebaseAnalytics
-    - FirebaseCore
-    - FirebaseCoreDiagnostics
-    - FirebaseCoreInternal
-    - FirebaseCrashlytics
-    - FirebaseInstallations
-    - GoogleAppMeasurement
-    - GoogleDataTransport
-    - GoogleUtilities
-    - nanopb
-    - OneSignalXCFramework
-    - PromisesObjC
 
 EXTERNAL SOURCES:
   device_info_plus:
     :path: ".symlinks/plugins/device_info_plus/ios"
   Flutter:
     :path: Flutter
-  flutter_native_splash:
-    :path: ".symlinks/plugins/flutter_native_splash/ios"
   package_info_plus:
     :path: ".symlinks/plugins/package_info_plus/ios"
-  path_provider_foundation:
-    :path: ".symlinks/plugins/path_provider_foundation/darwin"
 
 SPEC CHECKSUMS:
   device_info_plus: c6fb39579d0f423935b0c9ce7ee2f44b71b9fce6
-  Firebase: 5ae8b7cf8efce559a653aef0ad95bab3f427c351
-  FirebaseAnalytics: 89ad762c6c3852a685794174757e2c60a36b6a82
-  FirebaseCore: 2082fffcd855f95f883c0a1641133eb9bbe76d40
-  FirebaseCoreDiagnostics: 99a495094b10a57eeb3ae8efa1665700ad0bdaa6
-  FirebaseCoreInternal: bca76517fe1ed381e989f5e7d8abb0da8d85bed3
-  FirebaseCrashlytics: 3210572ddb77801e5a0bd9d7bc890769f2066a0c
-  FirebaseInstallations: 0a115432c4e223c5ab20b0dbbe4cbefa793a0e8e
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
-  flutter_native_splash: 52501b97d1c0a5f898d687f1646226c1f93c56ef
-  GoogleAppMeasurement: 6de2b1a69e4326eb82ee05d138f6a5cb7311bcb1
-  GoogleDataTransport: 54dee9d48d14580407f8f5fbf2f496e92437a2f2
-  GoogleUtilities: 13e2c67ede716b8741c7989e26893d151b2b2084
-  nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
-  OneSignalXCFramework: 10648e60ff3d335fbffa62d9b44b700b56d49b51
   package_info_plus: 115f4ad11e0698c8c1c5d8a689390df880f47e85
-  path_provider_foundation: 29f094ae23ebbca9d3d0cec13889cd9060c0e943
-  PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
 
-PODFILE CHECKSUM: 98e2da6694fc7d807de2d29295ef4dff93dbe435
+PODFILE CHECKSUM: 70d9d25280d0dd177a5f637cdb0f0b0b12c6a189
 
 COCOAPODS: 1.14.2
