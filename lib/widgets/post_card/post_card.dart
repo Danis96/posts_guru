@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:js_guru/app/models/comments_model.dart';
 import 'package:js_guru/app/utils/constants/constants.dart';
+import 'package:js_guru/app/utils/language/language_strings.dart';
 import 'package:js_guru/theme/color_helper.dart';
 import 'package:js_guru/widgets/buttons/common_button.dart';
 import 'package:js_guru/widgets/comment_card/comment_card.dart';
@@ -70,8 +71,8 @@ class PostCard extends StatelessWidget {
 
   Widget _buildDetailsTappable(BuildContext context) {
     return CustomTappableText(
-        text: 'Go to Details',
-        links: 'Details',
+        text: Language.post_details,
+        links: Language.post_details,
         onPressed: (int i) {
           if (onCardPressed != null) {
             onCardPressed!();

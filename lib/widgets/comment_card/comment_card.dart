@@ -53,7 +53,7 @@ class CommentCard extends StatelessWidget {
       children: <Widget>[
         Container(width: 10, height: 10, decoration: BoxDecoration(shape: BoxShape.circle, color: dotColor)),
         const SizedBox(width: 15),
-        Container(width: MediaQuery.of(context).size.width / 2.2, child: _buildStyledText(context, title, maxLines: 1, fontSize: 16)),
+        Container(width: MediaQuery.of(context).size.width / 2.5, child: _buildStyledText(context, title, maxLines: 1, fontSize: 16)),
       ],
     );
   }

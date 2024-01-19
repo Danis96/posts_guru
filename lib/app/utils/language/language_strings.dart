@@ -43,4 +43,9 @@ class Language {
   static const String img_enter_hint = 'Enter limit';
   static const String img_btn = 'Update limit & search';
 
+  // post card
+  static const String post_details = 'Go to Details';
+  static const String post_details_link = 'Details';
+
+
 }
