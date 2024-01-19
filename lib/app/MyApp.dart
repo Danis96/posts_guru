@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:js_guru/app/providers/images_provider/images_provider.dart';
+import 'package:js_guru/app/providers/posts_provider/posts_provider.dart';
+import 'package:provider/provider.dart';
+import 'package:provider/single_child_widget.dart';
 
 import '../routing/route_generator.dart';
 import '../theme/custom_light_theme.dart';
@@ -19,16 +23,22 @@ class MyApp extends StatelessWidget {
   }
 
   Widget buildApp() {
-    return MaterialApp.router(
-      routerConfig: router,
-      title: 'JSGuru',
-      builder: (BuildContext context, Widget? child) {
-        final MediaQueryData data = MediaQuery.of(context);
-        return MediaQuery(data: data.copyWith(textScaleFactor: 1.0), child: child!);
-      },
-      debugShowCheckedModeBanner: false,
-      theme: CustomTheme.lightTheme,
-      themeMode: currentTheme.currentTheme,
+    return MultiProvider(
+      providers: <SingleChildWidget>[
+        ChangeNotifierProvider<PostsProvider>(create: (_) => PostsProvider()),
+        ChangeNotifierProvider<ImagesProvider>(create: (_) => ImagesProvider()),
+      ],
+      child: MaterialApp.router(
+        routerConfig: router,
+        title: 'JSGuru',
+        builder: (BuildContext context, Widget? child) {
+          final MediaQueryData data = MediaQuery.of(context);
+          return MediaQuery(data: data.copyWith(textScaleFactor: 1.0), child: child!);
+        },
+        debugShowCheckedModeBanner: false,
+        theme: CustomTheme.lightTheme,
+        themeMode: currentTheme.currentTheme,
+      ),
     );
   }
 }

@@ -20,5 +20,6 @@ class Address {
   final String city;
   @JsonKey(name: 'zipcode', defaultValue: '')
   final String zipcode;
+  @JsonKey(name: 'geo')
   final GeoModel? geoModel;
 }

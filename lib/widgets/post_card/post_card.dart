@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:js_guru/app/models/comments_model.dart';
 import 'package:js_guru/app/utils/constants/constants.dart';
+import 'package:js_guru/app/utils/language/language_strings.dart';
 import 'package:js_guru/theme/color_helper.dart';
+import 'package:js_guru/widgets/buttons/common_button.dart';
 import 'package:js_guru/widgets/comment_card/comment_card.dart';
+import 'package:js_guru/widgets/tappable_texts/custom_tappable_text.dart';
 
 class PostCard extends StatelessWidget {
   const PostCard({
@@ -10,8 +13,8 @@ class PostCard extends StatelessWidget {
     this.body = '',
     this.user = '',
     this.dotColor = Colors.white,
-    this.commentOpened = false,
     this.onCardPressed,
+    this.onCardOpened,
     this.comments = const <CommentsModel>[],
   });
 
@@ -19,16 +22,16 @@ class PostCard extends StatelessWidget {
   final String title;
   final String body;
   final String user;
-  final bool commentOpened;
   final Function? onCardPressed;
+  final Function? onCardOpened;
   final List<CommentsModel>? comments;
 
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
       onExpansionChanged: (bool opened) {
-        if (opened && onCardPressed != null) {
-          onCardPressed!();
+        if (opened && onCardOpened != null) {
+          onCardOpened!();
         }
       },
       initiallyExpanded: false,
@@ -40,7 +43,7 @@ class PostCard extends StatelessWidget {
 
   Widget _buildTitle(BuildContext context) {
     return Container(
-      height: 130,
+      height: 190,
       decoration: BoxDecoration(
         color: ColorHelper.black.color.withOpacity(0.9),
         borderRadius: BorderRadius.circular(20),
@@ -59,10 +62,22 @@ class PostCard extends StatelessWidget {
         children: <Widget>[
           _buildTitleRow(context),
           _buildBody(context),
-          _styledText(context, user, maxLines: 1, fontSize: 12),
+          Align(alignment: Alignment.centerRight, child: _styledText(context, user, maxLines: 1, fontSize: 12)),
+          _buildDetailsTappable(context),
         ],
       ),
     );
+  }
+
+  Widget _buildDetailsTappable(BuildContext context) {
+    return CustomTappableText(
+        text: Language.post_details,
+        links: Language.post_details,
+        onPressed: (int i) {
+          if (onCardPressed != null) {
+            onCardPressed!();
+          }
+        });
   }
 
   Widget _buildTitleRow(BuildContext context) {
@@ -85,29 +100,24 @@ class PostCard extends StatelessWidget {
   List<Widget> _buildCommentCards() {
     return comments != null && comments!.isNotEmpty
         ? comments!
-        .map((CommentsModel e) => Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 44),
-      child: CommentCard(
-        user: e.email,
-        body: e.body,
-        title: e.name,
-      ),
-    ))
-        .toList()
+            .map((CommentsModel e) => Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 44), child: CommentCard(user: e.email, body: e.body, title: e.name)))
+            .toList()
         : <Widget>[];
   }
 
-  Widget _styledText(BuildContext context, String text, {double fontSize = 14, int maxLines = 1, FontWeight fontWeight = FontWeight.normal}) {
+  Widget _styledText(BuildContext context, String text,
+      {double fontSize = 14, int maxLines = 1, FontWeight fontWeight = FontWeight.normal}) {
     return Text(
       text,
       overflow: TextOverflow.ellipsis,
       maxLines: maxLines,
       style: Theme.of(context).textTheme.displayLarge!.copyWith(
-        fontFamily: FontConstants.POPPINS_FONT,
-        fontWeight: fontWeight,
-        fontSize: fontSize,
-        color: ColorHelper.white.color.withOpacity(0.7),
-      ),
+            fontFamily: FontConstants.POPPINS_FONT,
+            fontWeight: fontWeight,
+            fontSize: fontSize,
+            color: ColorHelper.white.color.withOpacity(0.7),
+          ),
     );
   }
 }

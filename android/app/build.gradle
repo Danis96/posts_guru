@@ -80,7 +80,7 @@ android {
         configurations.all {
             resolutionStrategy { force 'androidx.core:core-ktx:1.6.0' }
         }
-        applicationId "com.djudjo.scheduler"
+        applicationId "com.js.guru"
         minSdkVersion 24
         targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()

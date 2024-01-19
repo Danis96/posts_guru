@@ -45,17 +45,11 @@ class CustomBottomNavigationPage extends StatefulWidget {
   final int initialSelection;
   final bool showUnselectedLabel;
 
-  ///pushes items to the inside
   final double innerPadding;
   final double elevation;
 
-  ///flag is bottom navigation bar should be visible
-  ///necessary for trip details custom flow implementation
   final bool barVisible;
 
-  ///necessary for trip crash solution
-  ///scaffold from TripDetails can't recognize
-  ///WillPopScope because of BottomNavigationBar's one
   final Future<bool> Function()? onPop;
 
   @override

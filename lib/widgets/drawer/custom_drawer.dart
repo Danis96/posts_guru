@@ -1,4 +1,4 @@
-
+import 'package:go_router/go_router.dart';
 import 'package:js_guru/app/utils/extensions/list_extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -112,7 +112,7 @@ class CustomDrawer extends StatelessWidget {
                         if (onDrawerItemPressed != null) {
                           onDrawerItemPressed!(item.routeName!);
                         }
-                        Navigator.of(context).pushNamed(item.routeName!, arguments: item.arguments).then((_) {
+                        context.push(item.routeName!, extra: item.arguments).then((_) {
                           if (onDrawerOpened != null) {
                             onDrawerOpened!(item.routeName!);
                           }

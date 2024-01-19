@@ -1,3 +1,4 @@
+import 'package:go_router/go_router.dart';
 import 'package:js_guru/theme/color_helper.dart';
 import 'package:flutter/material.dart';
 
@@ -13,16 +14,17 @@ PreferredSizeWidget commonAppBar(
   Size? preferredSizeForBottom,
   Widget? bottomWidget,
   String? title,
+  Widget? titleWidget,
 }) {
   return AppBar(
     backgroundColor: color ?? Colors.transparent,
     elevation: 0,
-    title: title != null
+    title: titleWidget ?? (title != null
         ? Text(
             title,
             style: TextStyle(color: titleColor ?? ColorHelper.white.color, fontSize: 20),
           )
-        : const SizedBox(),
+        : const SizedBox()),
     bottom: PreferredSize(preferredSize: preferredSizeForBottom ?? const Size(0, 0), child: bottomWidget ?? const SizedBox()),
     actions: <Widget>[action ?? const SizedBox()],
     leading: hideLeading
@@ -32,7 +34,7 @@ PreferredSizeWidget commonAppBar(
               if (onLeadingTap != null) {
                 onLeadingTap();
               } else {
-                Navigator.of(context).pop();
+                context.pop();
               }
             },
             child: Icon(icon, color: leadingIconColor ?? Colors.black),
